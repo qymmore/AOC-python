@@ -26,7 +26,7 @@ def count_zeros(puzzle_input, start = 50, mod = 100):
         
         match = pattern.match(line)
         if not match:
-            raise ValueError(f"Invalid input line: {line}")
+            raise ValueError("Invalid input line: {}".format(line))
         
         direction, distance_str = match.group(1).upper(), match.group(2)
         distance = int(distance_str)
@@ -68,7 +68,7 @@ def count_all_zeros(rotations, start = 50, mod = 100):
         # parse direction
         dchar = token[0].upper()
         if dchar not in dir_map:
-            raise ValueError(f"Invalid direction in token: {token}")
+            raise ValueError("Invalid direction in token: {}".format(token))
         direction = dir_map[dchar]
         
         # parse steps
@@ -76,10 +76,10 @@ def count_all_zeros(rotations, start = 50, mod = 100):
         try:
             steps = int(token[1:])
         except Exception as e:
-            raise ValueError(f"Invalid steps in token: {token}") from e
+            raise ValueError("Invalid steps in token: {}".format(token))
         
         if steps < 0:
-            raise ValueError(f"Steps must be non-negative in token: {token}")
+            raise ValueError("Steps must be non-negative in token: {}".format(token))
         
         # if there are 0 steps, no intermediate clicks are occuring so we can skip
         if steps == 0:
