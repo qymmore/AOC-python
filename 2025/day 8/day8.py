@@ -118,10 +118,6 @@ def all_connections(coords):
     counts = Counter()
     for i in range(n):
         counts[dsu.find(i)] += 1
-
-    # now multiply the three largest sizes
-    
-    # multiply X coordinates of last pair
     
     x1 = coords[last_pair[0]][0]
     x2 = coords[last_pair[1]][0]
